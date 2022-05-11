@@ -8,7 +8,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const HappyPack = require('happyPack')
 // 根据cpu的数量创建线程池
 const os = require('os'); 
-const happyThreadPool = HappyPack.ThreadPool({size: 5})
+const happyThreadPool = HappyPack.ThreadPool({size: os.cpus().length})
 // 2.thread-loader 将loader放到线程池里，达到多线程构建的功能
 
 
